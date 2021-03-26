@@ -1,0 +1,22 @@
+#include<servo.h>
+Servo my_servo;
+void setup()
+{
+  Serial.begin(9600);
+  my_servo.attach(9);
+}
+void loop()
+{
+  x = analogRead(0);
+  Serial.println(x);
+  
+  if(x>250)
+    {
+      my_servo.write(180);
+    }
+  else
+    {
+      my_servo.write(0);
+    }
+    delay(1000);
+}
